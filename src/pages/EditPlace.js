@@ -4,11 +4,9 @@ import { doc, getDoc, updateDoc, serverTimestamp } from "firebase/firestore";
 import { useNavigate, useParams } from "react-router-dom";
 import { MapContainer, TileLayer, Marker, useMapEvents,useMap } from "react-leaflet";
 import { GeoSearchControl, OpenStreetMapProvider } from 'leaflet-geosearch';
-
-import MarkerClusterGroup from "react-leaflet-cluster";
 import { 
     MapPin, Clock, ShieldCheck, Image as ImageIcon, 
-    Save, Plus, X, Globe, Phone, Layers, Info, 
+     Plus, X, Layers, Info, 
     CheckCircle2, Loader2, ChevronRight
   } from "lucide-react";
   
@@ -56,15 +54,6 @@ const EditPlaceWeb = () => {
       return () => map.removeControl(searchControl);
     }, [map]);
   
-    return null;
-  }
-  function RecenterMap({ coords }) {
-    const map = useMap();
-    useEffect(() => {
-      if (coords) {
-        map.setView([coords.lat, coords.lng], 15);
-      }
-    }, [coords, map]);
     return null;
   }
   const [fetching, setFetching] = useState(true);

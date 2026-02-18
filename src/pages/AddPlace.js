@@ -1,12 +1,11 @@
 import React, { useState,useEffect } from "react";
-import { ChevronLeft, Save, Globe, Phone } from "lucide-react";
 import { db, auth } from "../firebaseConfig";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import { MapContainer, TileLayer, Marker, useMapEvents,useMap } from "react-leaflet";
 import { 
   MapPin, Clock, ShieldCheck, Image as ImageIcon, 
-  ChevronRight, ChevronLeft, Save, Plus, X, Globe, Phone, Layers, Info, CheckCircle2
+  ChevronRight,  Plus, X,  Layers, Info, CheckCircle2
 } from "lucide-react";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";

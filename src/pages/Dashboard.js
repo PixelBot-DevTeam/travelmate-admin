@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { collection, getDocs, query, limit, addDoc,doc } from "firebase/firestore";
+import { collection, getDocs, query, limit, addDoc } from "firebase/firestore";
 import { db } from "../firebaseConfig";
 import { useNavigate } from "react-router-dom";
 
@@ -88,25 +88,6 @@ export default function AdminDashboard() {
       console.error("Error:", error);
     }
     setLoading(false);
-  };
-
-  const handleAddPlace = async (e) => {
-    e.preventDefault();
-    try {
-      await addDoc(collection(db, newPlace.collection), {
-        name: newPlace.name,
-        description: newPlace.description,
-        image: newPlace.image,
-        type: newPlace.type,
-        createdAt: new Date()
-      });
-      alert("Added successfully!");
-      setNewPlace({ name: "", collection: "Places", description: "", image: "", type: "" });
-      fetchAllCollections();
-      setActiveTab("Dashboard");
-    } catch (err) {
-      alert("Error adding document");
-    }
   };
 
   if (loading) return <div style={styles.loader}>Loading...</div>;
