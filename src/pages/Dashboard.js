@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { collection, getDocs, query, limit, addDoc } from "firebase/firestore";
+import { collection, getDocs, query, limit } from "firebase/firestore";
 import { db } from "../firebaseConfig";
 import { useNavigate } from "react-router-dom";
 
@@ -62,13 +62,13 @@ export default function AdminDashboard() {
   };
   
   // State for Add Place Form
-  const [newPlace, setNewPlace] = useState({
-    name: "",
-    collection: "Places",
-    description: "",
-    image: "",
-    type: ""
-  });
+  // const [newPlace, setNewPlace] = useState({
+  //   name: "",
+  //   collection: "Places",
+  //   description: "",
+  //   image: "",
+  //   type: ""
+  // });
 
   useEffect(() => {
     fetchAllCollections();
