@@ -156,7 +156,7 @@ export default function AdminDashboard() {
                         <div style={styles.imageScrollContainer}>
                           {item.coverImages ? item.coverImages.map((url, i) => (
                             <img key={i} src={url} alt="" style={styles.sliderImg} />
-                          )) : <img src={item.image || "../images/placeholderImage.jpg"} style={styles.sliderImg} />}
+                          )) : <img src={item.image || "../images/placeholderImage.jpg"} alt="" style={styles.sliderImg} />}
                         </div>
                         {item.coverImages?.length > 1 && <div style={styles.sliderBadge}>{item.coverImages.length} Photos</div>}
                       </div>
